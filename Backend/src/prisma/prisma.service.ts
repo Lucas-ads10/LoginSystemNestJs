@@ -15,5 +15,9 @@ export class PrismaService {
   getClient(): PrismaClient {
     return this.prisma;
   }
-}
 
+  // Adicione um tipo para o PrismaClient para que o TypeScript possa reconhecer as propriedades geradas
+  get user() {
+    return this.prisma.user;
+  }
+}
