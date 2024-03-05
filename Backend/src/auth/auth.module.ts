@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
 import { JwtStrategy } from './guards/strategies/jwt.strategy';
 import { LocalStrategy } from './guards/strategies/local.strategy';
 import { LoginValidationMiddleware } from './middlewares/login-validation.middleware';
-import { UserService } from '../user/user.service'; // Importe UserService 
+import { UserService } from '../user/user.service'; 
 import { PrismaModule } from '../prisma/prisma.module'
 
 @Module({
@@ -21,7 +21,7 @@ import { PrismaModule } from '../prisma/prisma.module'
     PrismaModule, 
   ],
   controllers: [AuthController],
-  providers: [AuthService, LocalStrategy, JwtStrategy, UserService], // Adicione UserService aos provedores
+  providers: [AuthService, LocalStrategy, JwtStrategy, UserService], 
 })
 export class AuthModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
