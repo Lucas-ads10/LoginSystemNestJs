@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
 import { JwtStrategy } from './guards/strategies/jwt.strategy';
 import { LocalStrategy } from './guards/strategies/local.strategy';
 import { LoginValidationMiddleware } from './middlewares/login-validation.middleware';
-import { UserService } from '../user/user.service'; // Importe UserService
+import { UserService } from '../user/user.service'; // Importe UserService 
 import { PrismaModule } from '../prisma/prisma.module'
 
 @Module({
