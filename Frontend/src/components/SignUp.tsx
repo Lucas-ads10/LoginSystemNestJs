@@ -1,4 +1,6 @@
+// SignUp.tsx
 import React, { useState } from 'react';
+import axios from 'axios';
 
 interface SignUpProps {
   onLoginClick: () => void;
@@ -9,12 +11,15 @@ const SignUp: React.FC<SignUpProps> = ({ onLoginClick }) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode implementar a lógica de cadastro
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Password:', password);
+    try {
+      const response = await axios.post('http://localhost:3000/signup', { name, email, password });
+      console.log('Signup successful:', response.data);
+      // Redirecionar o usuário ou fazer qualquer outra ação necessária após o cadastro bem-sucedido
+    } catch (error) {
+      console.error('Signup failed:', error);
+    }
   };
 
   return (
